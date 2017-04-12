@@ -12,7 +12,6 @@ export class AppComponent  {
   newText = '';
 
   addText(text: any) {
-    console.log("123");
     if (text.trim().length) {
       this.list.push(text);
       this.newText = '';
