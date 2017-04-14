@@ -1,0 +1,14 @@
+
+#row {
+  position: relative;
+}
+
+#btn {
+  position: absolute;
+  left: 115px;
+  visibility: hidden;
+}
+
+#row:hover #btn {
+  visibility: visible;
+}
