@@ -4,20 +4,20 @@
     <span class="add-on"><input class="toggle-all" type="checkbox" *ngIf="list.length"></span>
     <input type="text" placeholder="What needs to be done?" autofocus="" #newText (keyup.enter)="addText(newText.value); newText.value=''">
   </div>
-  <div  *ngIf="list.length > 0">
-    <ul>
-      <li *ngFor="let element of list">
-        <div class="input-prepend input-append">
-          <span class="add-on"><input class="toggle" type="checkbox"></span>
-          <label>{{element}}</label>
-          <span class="add-on">
-            <button type="button" class="btn btn-default btn-sm">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            </button>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
 </header>
+<div  *ngIf="list.length > 0">
+  <ul>
+    <li *ngFor="let element of list">
+      <div class="input-prepend input-append">
+        <span class="add-on"><input class="toggle" type="checkbox"></span>
+        <label>{{element}}</label>
+        <span class="add-on">
+          <button type="button" class="btn btn-default btn-sm" (click)="removeText(element)">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
 

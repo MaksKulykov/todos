@@ -9,14 +9,18 @@ import { Component } from '@angular/core';
 
 export class AppComponent  {
   list: Array<string> = [];
-  newText = '';
 
   addText(text: any) {
     if (text.trim().length) {
       this.list.push(text);
-      this.newText = '';
       console.log(this.list);
     }
+  }
+
+  removeText(element: any){
+    let index = this.list.indexOf(element);
+    if(index != -1)
+      this.list.splice( index, 1 );
   }
 
 }
