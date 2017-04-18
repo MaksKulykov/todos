@@ -5,10 +5,25 @@
 
 #btn {
   position: absolute;
-  left: 115px;
+  right: 5px;
   visibility: hidden;
+  border: solid white;
+  color: red;
 }
 
 #row:hover #btn {
   visibility: visible;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+  width: 240px;
+}
+
+#head {
+  border-style: none;
 }
