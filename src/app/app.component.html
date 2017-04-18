@@ -3,7 +3,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>
+      <th class="cell">
         <div class="input-prepend">
           <span class="add-on"><input class="toggle-all" type="checkbox" *ngIf="list.length"></span>
           <input type="text" id="head" placeholder="What needs to be done?" autofocus="" #newText (keyup.enter)="addText(newText.value); newText.value=''">
@@ -13,7 +13,7 @@
   </thead>
   <tbody *ngIf="list.length > 0">
     <tr *ngFor="let element of list">
-      <td>
+      <td class="cell">
         <div class="input-prepend input-append" id="row">
           <span class="add-on"><input class="toggle" type="checkbox"></span>
           <label>{{element}}</label>
@@ -26,8 +26,8 @@
       </td>
     </tr>
     <tr>
-      <td>
-        {{list.length}} items left
+      <td id="down">
+          {{list.length}} items left
       </td>
     </tr>
   </tbody>

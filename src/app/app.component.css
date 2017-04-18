@@ -21,9 +21,22 @@ h1 {
 
 table {
   margin: auto;
-  width: 240px;
+  width: 500px;
+  background-color: white;
 }
 
 #head {
   border-style: none;
 }
+
+.cell {
+  height: 60px;
+  vertical-align: middle;
+}
+
+#down {
+  height: 30px;
+}
+
+
+
