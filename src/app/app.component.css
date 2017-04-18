@@ -8,11 +8,16 @@
   right: 5px;
   visibility: hidden;
   border: solid white;
-  color: red;
+  color: #c0a16b;
 }
 
 #row:hover #btn {
   visibility: visible;
+}
+
+#btn:hover {
+  background-color: white;
+  color: red;
 }
 
 h1 {
@@ -27,15 +32,28 @@ table {
 
 #head {
   border-style: none;
+  width: 300px;
 }
 
 .cell {
   height: 60px;
   vertical-align: middle;
+  font-size: large;
 }
 
 #down {
   height: 30px;
+  color: #9d9d9d;
+}
+
+input {
+  margin-right: 20px;
+}
+
+::-moz-placeholder {
+  font-style: italic;
+  font-size: large;
+  color: #dddddd;
 }
 
 

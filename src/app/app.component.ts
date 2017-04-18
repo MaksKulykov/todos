@@ -24,4 +24,8 @@ export class AppComponent  {
       this.list.splice( index, 1 );
   }
 
+  editText (element: any){
+    console.log(element);
+  }
+
 }
