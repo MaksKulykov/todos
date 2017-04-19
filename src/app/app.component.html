@@ -16,14 +16,14 @@
       <td class="cell">
         <div class="input-prepend input-append" id="row" *ngIf="!element.editing">
           <span class="add-on"><input class="toggle" type="checkbox"></span>
-          <label (dblclick)="editText(element) ">{{element.row}}</label>
+          <label (dblclick)="element.editing = true">{{element.row}}</label>
           <span class="add-on">
             <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(i)">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
           </span>
         </div>
-        <input class="edit" *ngIf="element.editing" [value]="element.row" #editedText (keyup.enter)="updateText(i, editedText.value)">
+        <input class="edit" *ngIf="element.editing" [value]="element.row" #editedText (keyup.enter)="editText(i, editedText.value)">
       </td>
     </tr>
     <tr>

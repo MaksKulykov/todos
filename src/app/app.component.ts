@@ -22,12 +22,7 @@ export class AppComponent  {
       this.list.splice( index, 1 );
   }
 
-  editText (element: any){
-    console.log(element);
-    element.editing = true;
-  }
-
-  updateText (index: number, editedText: any){
+  editText (index: number, editedText: any){
     let editedElement = {row: editedText, editing: false};
     if (editedText == ''){
       this.removeText(index);
