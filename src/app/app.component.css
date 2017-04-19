@@ -56,5 +56,12 @@ input {
   color: #dddddd;
 }
 
+.edit {
+  border-color: #204d74;
+  width: 400px;
+  height: 45px;
+  margin-left: 50px;
+}
+
 
 

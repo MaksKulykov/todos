@@ -14,7 +14,7 @@
   <tbody *ngIf="list.length > 0">
     <tr *ngFor="let element of list; let i = index">
       <td class="cell">
-        <div class="input-prepend input-append" id="row">
+        <div class="input-prepend input-append" id="row" *ngIf="!element.editing">
           <span class="add-on"><input class="toggle" type="checkbox"></span>
           <label (dblclick)="editText(element) ">{{element.row}}</label>
           <span class="add-on">
