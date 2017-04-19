@@ -18,9 +18,7 @@ export class AppComponent  {
     }
   }
 
-  removeText(element: any){
-    let index = this.list.indexOf(element);
-    if(index != -1)
+  removeText(index: number){
       this.list.splice( index, 1 );
   }
 
@@ -29,10 +27,10 @@ export class AppComponent  {
     element.editing = true;
   }
 
-  updateText (element: any, index: number, editedText: any){
+  updateText (index: number, editedText: any){
     let editedElement = {row: editedText, editing: false};
     if (editedText == ''){
-      this.removeText(element);
+      this.removeText(index);
     } else {
       this.list.splice(index, 1, editedElement);
     }
