@@ -12,17 +12,18 @@
     </tr>
   </thead>
   <tbody *ngIf="list.length > 0">
-    <tr *ngFor="let element of list">
+    <tr *ngFor="let element of list; let i = index">
       <td class="cell">
         <div class="input-prepend input-append" id="row">
           <span class="add-on"><input class="toggle" type="checkbox"></span>
-          <label (dblclick)="editText(element)">{{element}}</label>
+          <label (dblclick)="editText(element, i) ">{{element.row}}</label>
           <span class="add-on">
             <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(element)">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
           </span>
         </div>
+        <input class="edit" *ngIf="element.editing" [value]="element.row" #editedText (keyup.enter)="updateText(element, i, editedText.value)">
       </td>
     </tr>
     <tr>

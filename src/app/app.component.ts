@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent  {
-  list: Array<string> = [];
+  list: Array<any> = [];
 
   addText(text: any) {
     if (text.trim().length) {
-      this.list.push(text);
+      this.list.push({row: text, editing: false});
       console.log(this.list);
     }
   }
@@ -26,6 +26,16 @@ export class AppComponent  {
 
   editText (element: any){
     console.log(element);
+    element.editing = true;
+  }
+
+  updateText (element: any, index: number, editedText: any){
+    let editedElement = {row: editedText, editing: false};
+    if (editedText == ''){
+      this.removeText(element);
+    } else {
+      this.list.splice(index, 1, editedElement);
+    }
   }
 
 }
