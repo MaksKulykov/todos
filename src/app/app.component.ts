@@ -14,6 +14,7 @@ export class Element {
 
 export class AppComponent  {
     list: Element[] = [];
+    counter: number;
 
     addText(text: any) {
         if (text.trim().length) {
@@ -47,5 +48,13 @@ export class AppComponent  {
         this.list = this.list.filter(element => {
             return element.completed == false;
         });
+    }
+
+    count() {
+        let uncomplitedList = [];
+        uncomplitedList = this.list.filter(element => {
+            return element.completed == false;
+        });
+        this.counter = uncomplitedList.length;
     }
 }

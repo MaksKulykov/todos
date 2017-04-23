@@ -6,7 +6,7 @@
       <th class="cell">
         <div class="input-prepend">
           <span class="add-on"><input class="toggle-all" type="checkbox" *ngIf="list.length"></span>
-          <input type="text" id="head" placeholder="What needs to be done?" autofocus="" #newText (keyup.enter)="addText(newText.value); newText.value=''">
+          <input type="text" id="head" placeholder="What needs to be done?" autofocus="" #newText (keyup.enter)="addText(newText.value); newText.value=''; count()">
         </div>
       </th>
     </tr>
@@ -15,7 +15,7 @@
     <tr *ngFor="let element of list; let i = index" [class.checked]="element.completed">
       <td class="cell">
         <div class="input-prepend input-append" id="row" *ngIf="!element.editing">
-          <span class="add-on"><input class="toggle" type="checkbox" (change)="element.completed = !element.completed"></span>
+          <span class="add-on"><input class="toggle" type="checkbox" (change)="element.completed = !element.completed; count()"></span>
           <label (dblclick)="element.editing = true">{{element.row}}</label>
           <span class="add-on">
             <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(i)">
@@ -28,7 +28,7 @@
     </tr>
     <tr>
       <td id="down">
-        <span>{{list.length}} items left</span>
+        <span>{{counter}} items left</span>
         <button class="clear-completed" (click)="deleteCompleted()">Clear completed</button>
       </td>
     </tr>
