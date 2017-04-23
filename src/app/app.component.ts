@@ -51,10 +51,16 @@ export class AppComponent  {
     }
 
     count() {
-        let uncomplitedList = [];
-        uncomplitedList = this.list.filter(element => {
+        this.counter = this.list.filter(element => {
             return element.completed == false;
-        });
-        this.counter = uncomplitedList.length;
+        }).length;
     }
+
+ /*   toggle() {
+        this.list.forEach(element => {
+            if (!element.completed){
+                element.completed = true
+            }
+        })
+    }*/
 }

@@ -18,12 +18,12 @@
           <span class="add-on"><input class="toggle" type="checkbox" (change)="element.completed = !element.completed; count()"></span>
           <label (dblclick)="element.editing = true">{{element.row}}</label>
           <span class="add-on">
-            <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(i)">
+            <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(i); count()">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
           </span>
         </div>
-        <input class="edit" *ngIf="element.editing" [value]="element.row" #editedText (keyup.enter)="editText(i, editedText.value)">
+        <input class="edit" *ngIf="element.editing" [value]="element.row" #editedText (keyup.enter)="editText(i, editedText.value); count()">
       </td>
     </tr>
     <tr>
