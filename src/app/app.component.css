@@ -63,5 +63,13 @@ input {
   margin-left: 50px;
 }
 
+.clear-completed {
+  float: right;
+  border: solid white;
+  background-color: white;
+}
 
-
+.checked label {
+  text-decoration: line-through;
+  color: #dddddd;
+}

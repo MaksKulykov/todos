@@ -12,10 +12,10 @@
     </tr>
   </thead>
   <tbody *ngIf="list.length > 0">
-    <tr *ngFor="let element of list; let i = index">
+    <tr *ngFor="let element of list; let i = index" [class.checked]="element.completed">
       <td class="cell">
         <div class="input-prepend input-append" id="row" *ngIf="!element.editing">
-          <span class="add-on"><input class="toggle" type="checkbox"></span>
+          <span class="add-on"><input class="toggle" type="checkbox" (change)="element.completed = !element.completed"></span>
           <label (dblclick)="element.editing = true">{{element.row}}</label>
           <span class="add-on">
             <button type="button" id="btn" class="btn btn-default btn-sm" (click)="removeText(i)">
@@ -28,7 +28,8 @@
     </tr>
     <tr>
       <td id="down">
-          {{list.length}} items left
+        <span>{{list.length}} items left</span>
+        <button class="clear-completed" (click)="deleteCompleted()">Clear completed</button>
       </td>
     </tr>
   </tbody>

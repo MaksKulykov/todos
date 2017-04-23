@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+export class Element {
+    row: string;
+    editing: boolean;
+    completed: boolean;
+}
+
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
@@ -7,13 +13,14 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent  {
-    list: Array<any> = [];
+    list: Element[] = [];
 
     addText(text: any) {
         if (text.trim().length) {
             this.list.push({
-                row:     text,
-                editing: false
+                row:       text,
+                editing:   false,
+                completed: false
             });
             console.log(this.list);
         }
@@ -23,15 +30,22 @@ export class AppComponent  {
         this.list.splice( index, 1 );
     }
 
-    editText (index: number, editedText: any){
+    editText(index: number, editedText: any){
         let editedElement = {
-            row:     editedText,
-            editing: false
+            row:       editedText,
+            editing:   false,
+            completed: false
         };
         if (editedText == ''){
             this.removeText(index);
         } else {
             this.list.splice(index, 1, editedElement);
         }
+    }
+
+    deleteCompleted() {
+        this.list = this.list.filter(element => {
+            return element.completed == false;
+        });
     }
 }
